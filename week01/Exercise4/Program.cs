@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 class Program
 {
@@ -14,9 +15,7 @@ class Program
         List<int> usermadelist = new List<int>();
         usermadelist.Add(numbersarenownumbers);
 
-        int highestnumber = usermadelist.Max();
-        int lowestnumber = usermadelist.Min();
-        
+    
         while (numbersarenownumbers != 0)
         {
             Console.WriteLine("Enter a number");
@@ -38,6 +37,22 @@ class Program
             sum += numbersarenownumbers;
 
         }
+
+        int highestnumber = usermadelist.Max();
+        int lowestnumber = usermadelist.Min();
+        
+        foreach (int number in usermadelist)
+        {
+            if (number > highestnumber)
+            {
+                highestnumber = number;
+            }
+            if (number < lowestnumber)
+            {
+                lowestnumber = number;
+            }
+        }
+
         float average = ((float)sum / usermadelist.Count);
         Console.WriteLine($"Your average is {average}");
         Console.WriteLine($"The sum of the numbers you added is {sum}");
