@@ -56,8 +56,8 @@ class Program
         float average = ((float)sum / usermadelist.Count);
         Console.WriteLine($"Your average is {average}");
         Console.WriteLine($"The sum of the numbers you added is {sum}");
-        Console.WriteLine($"Your highest number is {highestnumber}:);
-        Console.WriteLine($"Your lowest number is {lowerstnumber}");
+        Console.WriteLine($"Your highest number is {highestnumber}");
+        Console.WriteLine($"Your lowest number is {lowestnumber}");
 
 
 
