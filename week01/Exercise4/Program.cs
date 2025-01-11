@@ -8,14 +8,14 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Exercise4 Project.");
         int sum = 0;
-        Console.Write("  Enter a number (Press 0 to quit and compute your sum, average, and ): ");
+        Console.Write("  Enter a number (Press 0 to quit and compute your sum, average, and highest/lowest numbers ):\n ");
         string numbersarejustwords = Console.ReadLine();
         int numbersarenownumbers = int.Parse(numbersarejustwords);
         sum += numbersarenownumbers;
         List<int> usermadelist = new List<int>();
         usermadelist.Add(numbersarenownumbers);
 
-    
+
         while (numbersarenownumbers != 0)
         {
             Console.WriteLine("Enter a number");
@@ -40,7 +40,7 @@ class Program
 
         int highestnumber = usermadelist.Max();
         int lowestnumber = usermadelist.Min();
-        
+
         foreach (int number in usermadelist)
         {
             if (number > highestnumber)
