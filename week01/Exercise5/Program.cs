@@ -9,6 +9,9 @@ class Program
         Console.WriteLine("Hello World! This is the Exercise5 Project.");
         DisplayMessage();
         UserFavoriteNumber();
+
+        int squaredNumber = SquareNumber((int)favoritenumber);
+        DisplayResult(username, squaredNumber);
         last();
 
     }
@@ -32,10 +35,14 @@ class Program
             Console.WriteLine("Invalid number. Please enter a valid number with digits and/or decimals.");
         }
     }
-    static void third()
+    static int SquareNumber(int number)
     {
+        return number * number;
+    }
 
-
+    static void DisplayResult(string name, int squaredNumber)
+    {
+        Console.WriteLine($"{name}, your squared favorite number is {squaredNumber}");
     }
     static void last()
     {
