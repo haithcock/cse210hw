@@ -6,7 +6,8 @@ namespace JournalApp
     {
         static void Main(string[] args)
         {
-    
+            Journal myJournal = new Journal();
+            myJournal.Run();
         }
     }
 }
