@@ -35,7 +35,7 @@ namespace JournalApp
 
         private void CreateJournalFile() //Checks to see if file exists then creates one if it doesn't.
         {
-
+            
         }
 
         private void DisplayIntro()
