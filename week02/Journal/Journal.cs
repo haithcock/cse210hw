@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace JournalApp
 {
@@ -16,7 +17,11 @@ namespace JournalApp
  
         private void DisplayIntro() { }
 
-        private void DisplayOutro() { }
+        private void DisplayOutro() 
+        { 
+            WriteLine("Journal App.");
+            ReadKey(true);
+        }
  
         private void DisplayJournalContents() { }
      
