@@ -2,14 +2,19 @@ using System;
 using System.IO;
 using System.Text;
 
-class Program
+
+namespace JournalApp
 {
-    static void Main(string[] args)
+    
+    class Program
     {
-        Console.WriteLine("Hello World! This is the Journal Project.");
+        static void Main(string[] args)
+        {
+                Journal myJournal = new Journal(); 
+                myJournal.Run();
+        }
     }
 }
-
 
 
 /* public static void WriteAllText (string path, string? contents); 

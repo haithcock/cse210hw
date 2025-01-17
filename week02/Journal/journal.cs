@@ -8,8 +8,20 @@ using System.Threading.Tasks
 
 namespace JournalApp
 {
-    class Journal
+    public class Journal
     {
-        
+        //This starts the journal app to get it running.
+        public void Run()
+        {
+
+        }
+        private CreateJournalFile() { }
+
+        private void DisplayIntro() { }
+        private void DisplayOutro() { }
+        private void DisplayJournalContents() { }
+        private void ClearFile() { }
+        private void AddEntry() { }
+
     }
 }
