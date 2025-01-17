@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
+using System.IO;
 
 namespace JournalApp
 {
     public class Journal
     {
+        private string JournalFile = "MyJournal.txt";
         private string TitleArt = @"⣿⣿⣿⣿⣿⠟⠋⠄⠄⠄⠄⠄⠄⠄⢁⠈⢻⢿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡀⠭⢿⣿⣿⣿⣿
 ⣿⣿⣿⣿⡟⠄⢀⣾⣿⣿⣿⣷⣶⣿⣷⣶⣶⡆⠄⠄⠄⣿⣿⣿⣿
@@ -28,14 +30,25 @@ namespace JournalApp
         public void Run()
         {
             Title = "Journal App";
+
             DisplayIntro();
-            // To do: Rest of the program
+            CreateJournalFile();
+            AddEntry();
+            DisplayJournalContents();
+            //ClearFile();
+            DisplayJournalContents();
+
             DisplayOutro();
         }
 
         private void CreateJournalFile() //Checks to see if file exists then creates one if it doesn't.
         {
-            
+            // WriteLine($"Does file exist? {File.Exists("MyJournal.txt")}");
+
+            if (!File.Exists(JournalFile))
+            {
+                File.CreateText(JournalFile);
+            }
         }
 
         private void DisplayIntro()
@@ -44,7 +57,7 @@ namespace JournalApp
             BackgroundColor = ConsoleColor.Magenta;
             Clear();
             WriteLine(TitleArt);
-            WriteLine(" \n  Greetings Comrade,\n\n  Welcome to the best Journal App you'll ever grade.");
+            WriteLine(" \n    Greetings Comrade,\n\n  Welcome to the best Journal App you'll ever grade.");
             WaitForKey();
         }
 
@@ -61,11 +74,32 @@ namespace JournalApp
             ReadKey(true);
         }
 
-        private void DisplayJournalContents() { }
+        private void DisplayJournalContents()
+        {
+            string journalText = File.ReadAllText(JournalFile);
+            WriteLine("\n=== Journal Contents ===");
+            WriteLine(journalText);
+            WriteLine("\n=== Journal Contents ===");
+            WriteLine("===========================");
+            WaitForKey();
+        }
 
-        private void ClearFile() { }
+        private void ClearFile()
+        {
+            File.WriteAllText(JournalFile, "");
+            WriteLine("Journal Cleared! ");
+            WaitForKey();
+        }
 
-        private void AddEntry() { }
+        private void AddEntry()
+        {
+            ForegroundColor = ConsoleColor.Green;
+            WriteLine("\nWhat would you like to add?:   ");
+            string newLine = ReadLine();
+            File.AppendAllText(JournalFile, $"\nEntry:{System.DateTime.Now}\n> {newLine}\n");
+            WriteLine("The Journal has been modified. ");
+            WaitForKey();
+        }
 
     }
 }
