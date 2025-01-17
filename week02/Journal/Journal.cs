@@ -11,23 +11,29 @@ namespace JournalApp
     {
         public void Run()
         {
-
+            DisplayIntro();
+            // To do: Rest of the program
+            DisplayOutro();
         }
         private void CreateJournalFile() { }
- 
-        private void DisplayIntro() { }
 
-        private void DisplayOutro() 
-        { 
+        private void DisplayIntro()
+        {
+            WriteLine("Thanks for using the journal!");
+            ReadKey(true);
+        }
+
+        private void DisplayOutro()
+        {
             WriteLine("Journal App.");
             ReadKey(true);
         }
- 
+
         private void DisplayJournalContents() { }
-     
+
         private void ClearFile() { }
-     
+
         private void AddEntry() { }
-    
+
     }
 }
