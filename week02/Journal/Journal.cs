@@ -33,12 +33,65 @@ namespace JournalApp
 
             DisplayIntro();
             CreateJournalFile();
-            AddEntry();
-            DisplayJournalContents();
-            //ClearFile();
-            DisplayJournalContents();
-
+            RunMenu();
             DisplayOutro();
+        }
+
+        public void RunMenu() //Presents options and allowe user to navigate freely.
+        {
+            string choice;
+            do
+            {
+                choice = GetChoice();
+                switch (choice)
+                {
+                    case "1":
+                        DisplayJournalContents();
+                        break;
+                    case "2":
+                        ClearFile();
+                        break;
+                    case "3":
+                        AddEntry();
+                        break;
+                    default:
+                        break;
+
+                }
+            } while (choice != "4");
+        }
+        private string GetChoice()
+        {
+            bool isChoiceValid = false;
+            string choice = "";
+
+            do
+            {
+
+                Clear();
+                ForegroundColor = ConsoleColor.DarkGray;
+                WriteLine(TitleArt);
+                ForegroundColor = ConsoleColor.Black;
+                WriteLine("\nWhat would you like to do?");
+                WriteLine(" > 1 - Read the Journal.");
+                WriteLine(" > 2 - Clear the Journal.");
+                WriteLine(" > 3 - Add to the Journal.");
+                WriteLine(" > 4 - Exit the Journal.");
+                choice = ReadLine().Trim();
+
+                if (choice == "1" || choice == "2" || choice == "3" || choice == "4")
+                {
+                    isChoiceValid = true;
+
+                }
+                else
+                {
+                    WriteLine($"\"{choice}\" is not a valid option. Please Chose 1 - 4");
+                    WaitForKey();
+                }
+            } while (!isChoiceValid);
+            return choice;
+
         }
 
         private void CreateJournalFile() //Checks to see if file exists then creates one if it doesn't.
