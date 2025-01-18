@@ -10,10 +10,10 @@ namespace JournalApp
 {
     public class Journal
     {
-        private string JournalFile = "MyJournal.txt";
+        private string _journalFile = "MyJournal.txt";
 
-        public List<string> journalEntries = new List<string>();
-        private string TitleArt = @"⣿⣿⣿⣿⣿⠟⠋⠄⠄⠄⠄⠄⠄⠄⢁⠈⢻⢿⣿⣿⣿⣿⣿⣿⣿
+        public List<string> _journalEntries = new List<string>();
+        private string _titleArt = @"⣿⣿⣿⣿⣿⠟⠋⠄⠄⠄⠄⠄⠄⠄⢁⠈⢻⢿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡀⠭⢿⣿⣿⣿⣿
 ⣿⣿⣿⣿⡟⠄⢀⣾⣿⣿⣿⣷⣶⣿⣷⣶⣶⡆⠄⠄⠄⣿⣿⣿⣿
 ⣿⣿⣿⣿⡇⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠄⠄⢸⣿⣿⣿⣿
@@ -145,7 +145,7 @@ namespace JournalApp
             ForegroundColor = ConsoleColor.Green;
             BackgroundColor = ConsoleColor.Magenta;
             Clear();
-            WriteLine(TitleArt);
+            WriteLine(_titleArt);
             WriteLine(" \n    Greetings Comrade,\n\n  Welcome to the best Journal App you'll ever grade.");
             WaitForKey();
         }
@@ -166,14 +166,14 @@ namespace JournalApp
 
         public void DisplayJournalContents()
         {
-            if (journalEntries.Count == 0)
+            if (_journalEntries.Count == 0)
             {
                 WriteLine("The journal is empty.");
             }
             else
             {
                 WriteLine("\n=== Journal Contents ===");
-                foreach (var entry in journalEntries)
+                foreach (var entry in _journalEntries)
                 {
                     WriteLine(entry);
                 }
@@ -184,8 +184,8 @@ namespace JournalApp
 
         public void ClearFile()
         {
-            journalEntries.Clear();
-            File.WriteAllText(JournalFile, "");
+            _journalEntries.Clear();
+            File.WriteAllText(_journalFile, "");
             WriteLine("Journal Cleared! ");
             WaitForKey();
         }
@@ -215,7 +215,7 @@ namespace JournalApp
                 var fileContent = File.ReadAllLines(fileName);
 
                 // Replace current journal entries with the content from the file
-                journalEntries = new List<string>(fileContent);
+                _journalEntries = new List<string>(fileContent);
 
                 Console.WriteLine($"Journal successfully loaded from '{fileName}'.");
             }
@@ -226,6 +226,20 @@ namespace JournalApp
         }
 
 
+
+        public void AddEntry()
+        {
+            string newEntry = JournalEntry.CreateNewEntry();
+            _journalEntries.Add(newEntry);
+            File.AppendAllText(_journalFile, newEntry);
+
+            Console.WriteLine("The Journal has been modified.");
+            WaitForKey();
+        }
+
+
+
+        /*
         public void AddEntry()
         {
             ForegroundColor = ConsoleColor.Green; //needs to prompt user from a list of writing prompts.
@@ -237,11 +251,11 @@ namespace JournalApp
             Console.WriteLine(selectedPrompt);
             string userResponse = ReadLine();
             string journalEntry = $"\n>{System.DateTime.Now}\nPrompt: {selectedPrompt}\nResponse: {userResponse}\n";
-            journalEntries.Add(journalEntry);
-            File.AppendAllText(JournalFile, $"\n{journalEntry}\n");
+            _journalEntries.Add(journalEntry);
+            File.AppendAllText(_journalFile, $"\n{journalEntry}\n");
             WriteLine("The Journal has been modified. ");
             WaitForKey();
         }
-
+        */
     }
 }

@@ -20,7 +20,7 @@ namespace JournalApp
                         journal.ClearFile();
                         break;
                     case "3":
-                        string journalContent = string.Join("\n", journal.journalEntries);
+                        string journalContent = string.Join("\n", journal._journalEntries);
                         journal.SaveJournalToFile(journalContent);
                         break;
                     case "4":
