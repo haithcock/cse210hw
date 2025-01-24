@@ -1,20 +1,18 @@
 public class Reference
 {
-    public string Book { get; private set; }
-    public int Chapter { get; private set; }
-    public int Verse { get; private set; }
-    public int EndVerse { get; private set; } /*This is optional and not always necessary.*/
+    private string Book { get; set; }
+    private int Chapter { get; set; }
+    private int Verse { get; set; }
+    private int EndVerse { get; set; }
 
-     // Constructor for a single verse reference
     public Reference(string book, int chapter, int verse)
     {
         Book = book;
         Chapter = chapter;
         Verse = verse;
-        EndVerse = verse; // No range, so end verse is the same as verse
+        EndVerse = verse;
     }
 
-    // Constructor for a verse range
     public Reference(string book, int chapter, int verse, int endVerse)
     {
         Book = book;
@@ -23,7 +21,6 @@ public class Reference
         EndVerse = endVerse;
     }
 
-        // Method to get the display text of the reference
     public string GetDisplayText()
     {
         if (Verse == EndVerse)
@@ -31,4 +28,10 @@ public class Reference
         else
             return $"{Book} {Chapter}:{Verse}-{EndVerse}";
     }
+
+    public string GetBook() { return Book; }
+    public int GetChapter() { return Chapter; }
+    public int GetVerse() { return Verse; }
+    public int GetEndVerse() { return EndVerse; }
 }
+

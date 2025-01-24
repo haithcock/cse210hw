@@ -1,20 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 public class Scripture
 {
-    public Reference Reference { get; private set; }
-    public List<Word> Words { get; private set; }
+    private Reference Reference { get; set; }
+    private List<Word> Words { get; set; }
 
-    // Constructor
     public Scripture(Reference reference, string text)
     {
         Reference = reference;
         Words = text.Split(' ').Select(word => new Word(word)).ToList();
     }
 
-    // Method to hide a specified number of words randomly
     public void HideRandomWords(int numberToHide)
     {
         Random random = new Random();
@@ -27,33 +24,31 @@ public class Scripture
         }
     }
 
-    // Method to get the display text of the scripture
     public string GetDisplayText()
     {
-        return $"{Reference.GetDisplayText()} {string.Join(" ", Words.Select(w => w.GetDisplayText()))}";
+        return $"{GetReferenceText()} {string.Join(" ", Words.Select(w => w.GetDisplayText()))}";
     }
 
-    // Method to check if all words are completely hidden
     public bool IsCompletelyHidden()
     {
         return Words.All(w => w.IsHidden);
     }
+
+    // Helper method to get the display text of the reference
+    public string GetReferenceText()
+    {
+        return Reference.GetDisplayText();
+    }
+
+    // Method to retrieve the count of words, if needed
+    public int GetWordCount()
+    {
+        return Words.Count;
+    }
+
+    // Method to expose words for external functionalities that require specific word manipulation
+    public IEnumerable<string> GetWordDisplayTexts()
+    {
+        return Words.Select(w => w.GetDisplayText());
+    }
 }
-
-/*
-getters and setters need to be 
-private string book
-
-private string book; --- all member variables need to be 
-
-~later~
-
-public string GetBook()
-{
-    return chapter;
-}
-
-
-
-
-*/
