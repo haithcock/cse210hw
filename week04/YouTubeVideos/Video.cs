@@ -25,17 +25,3 @@ public class Video
 
 
 
-/*
-Step 2️⃣: Add a Method to Video to Get the Number of Comments
-
-Now, we need a method inside Video that returns the number of comments.
-🛠 Your Task:
-
-    Inside Video, create a method called GetCommentCount().
-    This method should:
-        Return an int (the total number of comments in the Comments list).
-
-Hint:
-
-How do you get the size of a List<> in C#? Think about how you'd retrieve the number of items in Comments.
-*/
