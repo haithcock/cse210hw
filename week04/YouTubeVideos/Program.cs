@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
@@ -43,6 +44,23 @@ class Program
         Comment twelfthComment = new Comment("happybasket", "Go off, King");
         paulVideo.AddComment(twelfthComment);
 
+
+        List<Video> videos = new List<Video>();
+        videos.Add(catVideo);
+        videos.Add(bestVideo);
+        videos.Add(paulVideo);
+        foreach (Video video in videos)
+        {
+            Console.WriteLine($"\nTitle: {video.Title}");
+            Console.WriteLine($"Author: {video.Author}");
+            Console.WriteLine($"Length: {video.Length} seconds\n");
+            Console.WriteLine($"Number of comments: {video.GetTotalCommentCount()}");
+            Console.WriteLine("Comments:");
+            foreach (Comment comment in video.VideoComments)
+            {
+                Console.WriteLine($"- {comment.UserName}: {comment.UserComment}");
+            }
+        }
         Console.WriteLine($"\nTitle: {catVideo.Title}");
         Console.WriteLine($"Author: {catVideo.Author}");
         Console.WriteLine($"Length: {catVideo.Length} seconds \n");
