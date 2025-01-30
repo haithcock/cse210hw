@@ -60,39 +60,9 @@ class Program
             {
                 Console.WriteLine($"- {comment.UserName}: {comment.UserComment}");
             }
+    
         }
-        Console.WriteLine($"\nTitle: {catVideo.Title}");
-        Console.WriteLine($"Author: {catVideo.Author}");
-        Console.WriteLine($"Length: {catVideo.Length} seconds \n");
-         Console.WriteLine($"Number of comments: {catVideo.GetTotalCommentCount()}");
-        Console.WriteLine("Comments:");
-        foreach (Comment comment in catVideo.VideoComments)
-        {
-            Console.WriteLine($"- {comment.UserName}: {comment.UserComment}");
-
-        }
-        Console.WriteLine($"\nTitle: {bestVideo.Title}");
-        Console.WriteLine($"Author: {bestVideo.Author}");
-        Console.WriteLine($"Length: {bestVideo.Length} seconds \n");
-         Console.WriteLine($"Number of comments: {bestVideo.GetTotalCommentCount()}");
-        Console.WriteLine("Comments:");
-        foreach (Comment comment in bestVideo.VideoComments)
-        {
-            Console.WriteLine($"- {comment.UserName}: {comment.UserComment}");
-        }
-        Console.WriteLine($"\nTitle: {paulVideo.Title}");
-        Console.WriteLine($"Author: {paulVideo.Author}");
-        Console.WriteLine($"Length: {paulVideo.Length} seconds\n");
-
-
-       
-       
-        Console.WriteLine($"Number of comments: {paulVideo.GetTotalCommentCount()}");
-        Console.WriteLine("Comments:");
-        foreach (Comment comment in paulVideo.VideoComments)
-        {
-            Console.WriteLine($"- {comment.UserName}: {comment.UserComment}");
-        }
+        Console.WriteLine("");
 
 
 
