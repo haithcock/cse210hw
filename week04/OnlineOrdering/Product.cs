@@ -10,11 +10,18 @@ public class Product
 
     public int ProductID {get; set; }
 
+
     public Product(string name, double price, int quantity, int productId)
     {
         ProductID = productId;
         Name = name;
         Price = price;
         Quantity = quantity;
+   
+    }
+
+    public double GetTotalCost()
+    {
+        return Price * Quantity;
     }
 }
