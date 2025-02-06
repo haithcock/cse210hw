@@ -13,10 +13,26 @@ public abstract class Activity
         Name = name;
         Duration = duration;
     }
-
+  public void GreetInKorean()
+    {
+        var now = DateTime.Now;
+        if (now.Hour < 12)
+        {
+            Console.WriteLine("안녕하세요! 좋은 아침이에요. (Good morning!)");
+        }
+        else if (now.Hour < 18)
+        {
+            Console.WriteLine("안녕하세요! 좋은 오후입니다. (Good afternoon!)");
+        }
+        else
+        {
+            Console.WriteLine("안녕하세요! 좋은 저녁이에요. (Good evening!)");
+        }
+    }
     // Methods
     public void StartActivity()
     {
+        GreetInKorean(); 
         Console.WriteLine($"Starting {Name} activity for {Duration} seconds.");
         Console.WriteLine("Prepare to begin...");
         Thread.Sleep(2000); // Pause for 2 seconds before starting
