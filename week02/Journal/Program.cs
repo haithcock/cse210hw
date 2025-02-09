@@ -14,7 +14,5 @@ namespace JournalApp
 
 /* 
 This program exceeds requirements by having 
-an unnecessary 4th class for the menu logic. 
-Additionally the program runs with a pink 
-background and contains ascii art. 
+different colors for texts and containing ascii art. 
 */
