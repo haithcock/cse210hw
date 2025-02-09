@@ -1,9 +1,11 @@
 using System;
+using JournalApp;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the EternalQuest Project.");
+        var journal = new Journal();
+        journal.Run();
     }
 }
