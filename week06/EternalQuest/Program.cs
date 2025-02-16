@@ -5,7 +5,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        var journal = new Journal();
-        journal.Run();
+        Console.WriteLine("Hello world!");
     }
 }
