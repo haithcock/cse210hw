@@ -1,18 +1,7 @@
-using EternalQuest;
-
-    public class SimpleGoal(string name, string description, int points)
-        : base(name, description, points){}
-
-    public override void RecordEvent()
-    {
-
-    }
-    public override bool IsComplete {get : set;} = false
-    {
-        return false;
-
-    }
-    public override string GetStringRepresentation()
-    {
-     
-    }
+private class SimpleGoal : Goal
+{
+    public string Name { get; set; }
+    public string Description { get; set; }
+    
+    public int Points { get; set; }
+}

@@ -25,3 +25,4 @@ public class Video
 
 
 
+/*   Goal myFirstGoal = new Goal("Finish Project", "Complete the final project for my course.", 100);  */
