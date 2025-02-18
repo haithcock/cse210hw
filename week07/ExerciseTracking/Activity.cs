@@ -12,6 +12,8 @@ public abstract class Activity
         _lengthInMinutes = length;
     }
 
+    public int Length => _lengthInMinutes;
+
     public abstract double GetDistance();
     public abstract double GetSpeed();
     public abstract double GetPace();
