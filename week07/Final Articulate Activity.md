@@ -36,7 +36,9 @@
 
 
     1.3 How did using that principle help that program become more flexible for future changes?
-
+        - Because I made _prompts into a private list
+        it can easily add or remove additional prompts
+        without altering the main logic of the program.
 
 2. Encapsulation
     2.1 Briefly define the principle.
@@ -54,11 +56,18 @@
     
     
     2.2 How did you use that principle in one of your programs.
-        -   
+        -   In the wk07 ExerciseTracking assignment
+        we used private variables to store data. 
+        Specifically _date and _lengthInMinutes
+        for the purpose of keeping data or info 
+        seperate from the rest of the program.
     
     
     2.3 How did using that principle help that program become more flexible for future changes?
-        -   
+        -   By keeping data and information private
+        we ensured that the data can't be accidentally 
+        changed or modified. Additionally it makes 
+        adding new activities to the program easier as well.
 
 
 
@@ -73,11 +82,15 @@
 
 
     3.2 How did you use that principle in one of your programs.
-        -
+        - I used it in the most recent wk07 ExerciseTracking
+        assignment by having a base activity cclass
+        that child classes inherit attributes from. 
 
 
     3.3 How did using that principle help that program become more flexible for future changes?
-        -
+        -Inhetirance let me reuse the shared
+        attributes and methods from the activity
+        class for all child/derived classes.
 
 
 
@@ -95,8 +108,14 @@
     
     
     4.2 How did you use that principle in one of your programs.
-        -
+        - In the week07 assignment I used polymorphism by
+        using the base activity class for every activity class
+        and then used overriding methods. Each activity object 
+        I called my GetSummary method.
     
     
     4.3 How did using that principle help that program become more flexible for future changes?
-        - 
+        - Polymorphism allowed that all activity objects
+        to be treated as such but were still able to act
+        or behave differently from each other. This way the
+        design allows for extension but not for modification. 
