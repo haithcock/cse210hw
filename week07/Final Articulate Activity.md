@@ -10,6 +10,29 @@
 
     1.2 How did you use that principle in one of your programs.
         -   
+                    public class JournalEntry
+            {
+                private static List<string> _prompts = new List<string>
+                {
+                    "Are you happy today?",
+                    "Did you make someone smile today?",
+                    "Did you eat enough food?",
+                    "Did you drink enough water?",
+                    "Did you get enough sleep?"
+                };
+
+                public static string CreateNewEntry()
+                {
+                    Random random = new Random();
+                    string selectedPrompt = _prompts[random.Next(_prompts.Count)];
+                    Console.WriteLine(selectedPrompt);
+
+                    string userResponse = Console.ReadLine();
+                    return $"\n>{DateTime.Now}\nPrompt: {selectedPrompt}\nResponse: {userResponse}\n";
+                }
+            }
+            ======================================================
+            In the Code Example  the JournalEntryClass abstracts the process of presenting a random prompt for journal entries while CreateNewEntry hides this complexity and only presents the user with a simple interface
 
 
     1.3 How did using that principle help that program become more flexible for future changes?
@@ -61,7 +84,14 @@
 
 4. Polymorphism
     4.1 Briefly define the principle.
-        -
+        - Polymorphism allows methods to do different
+         things based on the object it is acting upon. 
+         In C# and in our class it is achieved through 
+         method overriding and interfaces, enabling 
+        a single method to have multiple implementations. 
+        This allows for more flexible and maintainable code 
+        by enabling objects to be treated as instances of
+         their parent class rather than their actual class.
     
     
     4.2 How did you use that principle in one of your programs.
