@@ -12,11 +12,12 @@ class Program
             new Cycling(currentDate, 30, 20),
             new Swimming(currentDate, 30, 30)
         };
-        Console.WriteLine("Activity Summary:\n");
+        Console.WriteLine("\nActivity Summary:");
         foreach (var activity in activities)
         {
-            Console.WriteLine(activity.GetSummary());
             Console.WriteLine("==========");
+            Console.WriteLine(activity.GetSummary());
+//            Console.WriteLine("==========");
         }
     }
 }
