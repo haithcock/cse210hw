@@ -20,7 +20,7 @@ public abstract class Activity
 
 public virtual string GetSummary()
 {
-    return $"{_date} {GetType().Name} ({_length} min) Distance {GetDistance():F1} miles, Speed {GetSpeed():F1} mph, Pace: {GetPace():F1} min per mile";
+    return $"{_date} {GetType().Name} ({_length} min)- Distance {GetDistance():F1} miles, Speed {GetSpeed():F1} mph, Pace: {GetPace():F1} min per mile";
 }
 
 

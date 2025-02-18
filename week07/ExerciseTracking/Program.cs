@@ -4,7 +4,7 @@ class Program
 {
     static void Main()
     {
-        string currentDate = DateTime.Now.ToString("dd MMM yyyy HH:mm:ss");
+        string currentDate = DateTime.Now.ToString("dd MMM yyyy");
         List<Activity> activities = new List<Activity>
         {
         
