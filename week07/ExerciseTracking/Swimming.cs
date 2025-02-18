@@ -13,6 +13,6 @@ public class Swimming : Activity
         return km * 0.62;
     }
 
-    public override double GetSpeed() => (GetDistance() / Length) * 60;
+    public override double GetSpeed() => GetDistance() / Length * 60;
     public override double GetPace() => Length / GetDistance();
 }
