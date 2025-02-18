@@ -20,3 +20,18 @@ class Program
         }
     }
 }
+
+/*
+This assignment exceeds exceeds expectations for 
+including creative implementations.
+
+1. In the Swimming.cs file I accurately calculated the distance
+swam in kilometers and converted it to miles. I then used this
+distance to calculate the speed and pace of the swimmer with static
+information. 
+
+2. The datetime is used to get the current date and time in the Program.cs
+file. This is passed to the constructors of the Running, Cycling, and
+Swimming classes and used to display the date of the activity in the
+GetSummary method.
+*/
